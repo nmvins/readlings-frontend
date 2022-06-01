@@ -2,13 +2,13 @@
   "name": "license",
   "version": "0.0.0",
   "scripts": {
-    "dev": "ng serve",
-    "start": "serve -s build",
+    "ng": "ng",
+    "start": "ng serve",
     "build": "ng build",
-    "test": "ng test --env=jsdom",
-    "eject": "ng eject",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
     "heroku-postbuild": "npm run build"
-    },
+  },
   "private": true,
   "dependencies": {
     "@angular/cli": "~13.2.3",
