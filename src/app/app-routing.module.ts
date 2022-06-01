@@ -17,7 +17,7 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: HomePageComponent, canActivate: [AuthGuard]},
-  { path: 'reading-settings', component: ReadingSettingsComponent, canActivate: [AuthGuard]},
+  { path: 'reading-settings', component: ReadingSettingsComponent},
   { path: 'predefined-books', component: PredefinedBooksPageComponent, canActivate: [AuthGuard]},
   { path: 'read', component: ReadComponent, canActivate: [AuthGuard]},
   { path: 'review-questions', component: ReviewQuestionsComponent, canActivate: [AuthGuard]},
