@@ -89,6 +89,30 @@ export class MeasureService {
     })
   }
 
+  addLoginDate(date: string) {
+    return new Promise(resolve => {
+      firstValueFrom(this.http.post(this.apiUrl + "/users/addLoginDate", {
+        "email": this.currentUser.email,
+        "date": date
+      }
+      )).then(data => {
+        resolve(data);
+      });
+    });
+  }
+
+  addLogoutDate(date: string) {
+    return new Promise(resolve => {
+      firstValueFrom(this.http.post(this.apiUrl + "/users/addLogoutDate", {
+        "email": this.currentUser.email,
+        "date": date
+      }
+      )).then(data => {
+        resolve(data);
+      });
+    });
+  }
+
   getCurrentUser() {
     this.authService.getCurrentUser().subscribe(data => this.currentUser = data);
   }

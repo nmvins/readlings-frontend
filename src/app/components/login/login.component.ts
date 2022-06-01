@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MeasureService } from 'src/app/services/measure.service';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +28,8 @@ export class LoginComponent implements OnInit {
   invalidCredentials = false;
   loading = false;
 
-  constructor(protected authService: AuthenticationService, protected router: Router, private _snackBar: MatSnackBar) { }
+  constructor(protected authService: AuthenticationService, protected measureService: MeasureService,
+     protected router: Router, private _snackBar: MatSnackBar) { }
 
   openSnackBar(message: string) {
     this._snackBar.open(message, 'Ok', {
@@ -46,6 +48,8 @@ export class LoginComponent implements OnInit {
       try {
         this.loading = true;
         const result = await this.authService.login(this.emailToLogin, this.passwordToLogin).toPromise();
+        const time = new Date();
+        await this.measureService.addLoginDate(time.toString());
         this.router.navigate(['home']);
       }
       catch (e) {

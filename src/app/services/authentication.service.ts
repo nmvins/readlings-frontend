@@ -24,7 +24,7 @@ export class AuthenticationService {
     this.user = this.userSubject.asObservable();
   }
 
-   get userValue(): any {
+  get userValue(): any {
     return this.userSubject.value;
   }
 
@@ -32,16 +32,16 @@ export class AuthenticationService {
     let params = new HttpParams();
     params = params.append('email', email);
     params = params.append('password', password);
-    
+
     return this.http.post(this.basePath + '/users/signin', {},
       { params: params }).pipe(map((user: any) => {
-      user.authdata = window.btoa(email + ':' + password);
-      user.email = email;
-      user.password = password;
-      localStorage.setItem('user', JSON.stringify(user));
-      this.userSubject.next(user);
-      return user;
-    }));
+        user.authdata = window.btoa(email + ':' + password);
+        user.email = email;
+        user.password = password;
+        localStorage.setItem('user', JSON.stringify(user));
+        this.userSubject.next(user);
+        return user;
+      }));
   }
 
   openSnackBar(message: string) {
@@ -54,7 +54,7 @@ export class AuthenticationService {
 
   signup(email: string, password: string, username: string) {
     return new Promise(resolve => {
-      firstValueFrom(this.http.post(this.basePath + "/users/signup", { "email": email,"password": password, "username": username },
+      firstValueFrom(this.http.post(this.basePath + "/users/signup", { "email": email, "password": password, "username": username },
       )).then(data => {
         resolve(data);
       }).catch((err: HttpErrorResponse) => {
@@ -74,12 +74,12 @@ export class AuthenticationService {
   }
 
   isLoggedIn() {
-  if ( this.userValue.token !== null ) {
-    if (!this.helper.isTokenExpired(this.userValue.token)) {
-      return true;
-    } else  { return false; }
-  } else {
-    return false;
+    if (this.userValue.token !== null) {
+      if (!this.helper.isTokenExpired(this.userValue.token)) {
+        return true;
+      } else { return false; }
+    } else {
+      return false;
+    }
   }
-}
 }

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { MeasureService } from 'src/app/services/measure.service';
 
 @Component({
   selector: 'app-navbar',
@@ -15,7 +16,8 @@ export class NavbarComponent implements OnInit {
    links = ['/home', '/reading-settings'];
   activeLink = this.links[0];
 
-  constructor(private authService: AuthenticationService, router: Router) {
+  constructor(private authService: AuthenticationService, private measureService: MeasureService,
+     router: Router) {
     router.events.subscribe(event => {
       if (router.url === '') {
         this.showSideNav = false;
@@ -26,7 +28,9 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logout(){
+  async logout(){
+    const time = new Date();
+    await this.measureService.addLoginDate(time.toString());
     this.authService.logout();
   }
 
