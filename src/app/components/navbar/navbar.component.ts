@@ -29,8 +29,8 @@ export class NavbarComponent implements OnInit {
   }
 
   async logout(){
-    const time = new Date();
-    await this.measureService.addLoginDate(time.toString());
+    // const time = new Date();
+    // await this.measureService.addLoginDate(time.toString());
     this.authService.logout();
   }
 
