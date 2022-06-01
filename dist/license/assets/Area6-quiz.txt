@@ -1,0 +1,12 @@
+How did Mr Bleibner die?
+Heart failure,Suicide,Blood poisoning -c
+What did Porot say about Lady Willard's husband?
+He died in Egypt, He was a devoted Egyptologist -c, He never went to egypt
+How did Mr. Schneider die?
+Tetanus -c,Blood poidoning, Heart failure
+Where is Mr. Harper about to leave?
+New York -c,Europe,Nowhere
+What did Dr. Tosswill think was happening to them?
+He was confused,Someone is attacking them,Someone is hoaxing them
+Which is not a cause of death for one of the characters? (from The Adventure of the Egyptian Tomb)
+Tetanus,Poisonous snake bite -c,Blood poisoning

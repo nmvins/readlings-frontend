@@ -1,0 +1,12 @@
+Who were they expecting for tea?
+Inspector Japp -c,A woman,Inspector Hastings
+What train did Mr. Davenheim take on Saturday?
+The 13:00 one,The 12:40 one -c,The 15:00 one
+What time did Mr. Davenheim leave the house?
+Nine,Half-past five -c,One
+Who had a grudge against Davenheim?
+Lowen -c,Ms. Davenheim,Jepp
+Where did Hastings think the man was hiding?
+New York,Europe,London -c
+Who was Billy Kellet?
+A friend,An inspector,A character -c

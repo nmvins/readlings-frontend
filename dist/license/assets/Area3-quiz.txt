@@ -1,0 +1,12 @@
+Who was Mrs. Robinson?
+A bride who was there with her husband -c,A mother,One of the detective's friends
+Which floor is the cheap flat on?
+Second -c,First,Third
+What was the lady's name?
+Bella,Stella -c,Anna
+On which day was Poirot out all day?
+Monday -c,Tuesay,Friday
+What did Poirot tell the man he is looking for?
+A doctor -c,A friend,Police
+What did Poirot say about a black cat crossing your path?
+It brings you good luck -c,It brings you bad luck,It doesn't mean anything

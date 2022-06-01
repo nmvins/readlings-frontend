@@ -1,0 +1,12 @@
+Who presented them the problem?
+Miss Violet Marsh -c,Jepp,A friend
+When was the document made? (The one Miss Marsh handed Poirot)
+A few days ago, A few months ago, Three years ago -c
+How did Baker remember the time he wa sasked about?
+He's just put the milk on -c,His wife told him,He didn't remember
+Who was the only visitor?
+Miss Violet -c,Baker,No one
+Where did they catch a train to?
+London -c,Nowhere,Another country
+When was the document dated?
+A few years ago,March 25 -c,February 21

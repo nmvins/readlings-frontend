@@ -1,0 +1,12 @@
+Who is one of their friends?
+Dr Hawker -c,Inspector Hawker,Count Foscatini
+On which floor was Flat 11 situated?
+First,Second -c,Third
+Who was Robert?
+A friend,A victim,The lift man -c
+What was the time of the murder?
+Around 2,In the morning,8:47 -c
+Who was the visitor Poirot was expecting?
+The Count,Ascanio -c,A friend
+With what does Graves strike his master?
+The marble figure -c,A knife,A chair

@@ -1,0 +1,12 @@
+Where did they dine Saturday evening?
+Grand Metropolitan -c,New York,They didn't
+Who entered the hotel?
+Two men -c,A woman, A child
+Where was the door, that Poirot asked about, leading to?
+Outside,The hallway,Into the next apartment -c
+From where did Poirot extract the jewel-case?
+The drawer of the dressign-table -c,Under the bed,Behind the mirror
+How many times did Hastings have to ring the bell?
+Two times,Three times -c,Once
+Who got arrested?
+No one,The valet,The chambermaid and the valet -c
