@@ -1,0 +1,61 @@
+<body>
+
+    <div *ngIf="isAreaChanged && !isDone" class="second">
+        <div>You unlocked a new challenge.</div>
+        <div>Next area will begin</div>
+    </div>
+
+    <div *ngIf="!isFirstLevel">
+        <div *ngIf="isCorrect && !nextLevel" class="second">
+            <div>
+                Congrats! You finished this level.
+            </div>
+            <div>Click next to go to the next one or Cancel to return to home page.</div>
+            <div>
+                <button (click)="return()" type="button" class="btn-second">Cancel</button>
+                <button (click)="next()" type="button" class="btn-second">Next</button>
+            </div>
+        </div>
+
+        <div *ngIf="nextLevel && !isFirstLevel && isCorrect" class="third">
+            <p>Next level will start in</p>
+            <div>{{seconds}}</div>
+        </div>
+    </div>
+
+
+
+    <div *ngIf="isFirstLevel" class="third">
+        <p>Level will start in</p>
+        <div>{{seconds}}</div>
+    </div>
+
+
+    <div *ngIf="isDone" class="first">
+        <label id="example-radio-group-label">{{question}}</label>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="choice">
+            <div>
+                <mat-radio-button class="example-radio-button" *ngFor="let answer of answers" [value]="answer">
+                    {{answer}}
+                </mat-radio-button>
+            </div>
+        </mat-radio-group>
+        <div>Your answer is: </div>
+        <div>{{choice}}</div>
+
+        <div>
+            <button (click)="confirm()" type="button" class="btn-read">Confirm</button>
+        </div>
+    </div>
+
+
+    <div *ngIf="!isCorrect && !isDone && !isFirstLevel && !nextLevel" class="second">
+        <div>
+            Your answer was not correct. You didn't pass the level.
+        </div>
+
+        <div>
+            <button (click)="cancel()" type="button" class="btn-second">OK</button>
+        </div>
+    </div>
+</body>

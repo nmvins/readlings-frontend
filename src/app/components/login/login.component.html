@@ -1,0 +1,80 @@
+<body>
+    <div class="form-container">
+        <mat-tab-group dynamicHeight [selectedIndex]="1">
+            <mat-tab label="Readlings" disabled>
+                <ng-template mat-tab-label>
+                    <img src="/assets/books8.png" class="book-icon">
+                    <span class="title"> Readlings</span>
+                </ng-template>
+            </mat-tab>
+
+            <mat-tab label="Login">
+                <img src="/assets/books5.png" align="right" width="18%">
+                <ng-template mat-tab-label>
+                    <span class="tab-title">Login</span>
+                </ng-template>
+                <div class="login-container" id="login"  (keyup.enter)="login()">
+                    <div class="login-intro">START SPEED READING</div>
+                    <h1 class="login-intro-title">Log into your account.</h1>
+                    <div class="login-intro">Don't have an account yet? Click on Sign Up.
+                    </div>
+                    <br>
+
+
+                    <div class="row justify-content-md-center">
+                        <div class="row">
+                            <input matInput [(ngModel)]="emailToLogin" class="form-control"
+                                placeholder="Email" />
+                        </div>
+                        <div class="row">
+                            <input type="password" [(ngModel)]="passwordToLogin" class="form-control"
+                                placeholder="Password" />
+                        </div>
+                        <div class="row">
+                            <button (click)="login()" type="button" class="btn login">Login</button>
+                            <button (click)='moveToSignUpTab("Sign up")' type="button" class="btn login">Sign
+                                Up</button>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+
+            <mat-tab label="Sign up" id="signUp">
+                <ng-template mat-tab-label>
+                    <span class="tab-title">Sign up</span>
+                </ng-template>
+                <img src="/assets/books5 - Copy.png" align="left" width="18%">
+                <div class="signup-container"  (keyup.enter)="signup()">
+                    <div class="signup-intro">START SPEED READING</div>
+                    <h2 class="signup-intro-title">Create a new account.</h2>
+                    <div class="signup-intro">Already have an account? Click on Login
+                    </div>
+                    <br>
+
+                    <div class="row justify-content-md-center">
+                        <div class="row">
+                            <input matInput [(ngModel)]="emailToSignup" class="form-control" placeholder="Email" />
+                            <!-- <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon> -->
+                        </div>
+                        <div class="row">
+                            <input matInput [(ngModel)]="usernameToSignUp" class="form-control"
+                                placeholder="Username" />
+                            <!-- <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon> -->
+                        </div>
+                        <div class="row">
+                            <input type="password" [(ngModel)]="passwordtoSignUp" class="form-control"
+                                placeholder="Password" />
+                        </div>
+                        <div class="row">
+                            <button (click)="signup()" type="button" class="btn signup">Create account</button>
+                            <button (click)='moveToLoginTab("Login")' type="button" class="btn signup">Login</button>
+                        </div>
+                    </div>
+                </div>
+
+            </mat-tab>
+        </mat-tab-group>
+
+    </div>
+
+</body>

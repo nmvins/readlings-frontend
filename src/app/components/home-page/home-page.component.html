@@ -1,0 +1,109 @@
+<body>
+  <div class="content">
+    <div class="row">
+      <div class="col-sm one">
+        <div class="first">Welcome to</div>
+        <div class="second">READLINGS</div>
+        <div class="third">Discover new ways to train your brain</div>
+        <button mat-icon-button (click)="scrollToElement(target)" class="btn menu">
+          <mat-icon class="menu-icon">keyboard_arrow_down</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div #target class="row">
+      <div class="col-sm two">
+        <!-- <button (click)="profile()" type="button" class="btn ggg">User profile</button> -->
+        <div class="intro-title">The Readlings Solutions</div>
+        <div class="intro-description-first">Reading is an important part of our everyday activities. In this world where the 
+          technology is continuously evolving, we have to keep up.
+          This is exactly what this app is trying to do. Our brains have different ways of learning, but they can be trained over time.
+          By training our brains to read faster we get a lot of benefits in a lot more areas of our lives.
+        </div>
+
+        <div class="intro-description-second">
+          Speed reading is a technique to increase someone's speed of reading. By using different methods over a long period of time, 
+          your brain will be trained to read faster. One of the most important things that will help someone improve their reading skills is 
+          getting rid of their inner voice. This app aims to help you do that, increase the speed of reading, increase your level of attention
+           and focus on what you need to know.
+        </div>
+      </div>
+      <div class="col-sm two">
+        <div class="img"></div>
+      </div>
+      <button mat-icon-button (click)="scrollToElement(secondTarget)" class="btn menu middle">
+        <mat-icon class="menu-icon">keyboard_arrow_down</mat-icon>
+      </button>
+    </div>
+    <div #secondTarget class="row">
+      <div class="col-sm three">
+        <mat-accordion class="items-headers-align">
+          <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Measure
+              </mat-panel-title>
+              <mat-panel-description>
+                Measure your aptitudes
+                <mat-icon>info</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <span class="details">Before starting to read, you should give us some informations about yourself. This will help us understand you current reading skills level.
+              Also, this way, after a while you will be able to see how much you managed to improve your skills. 
+              We all want to see some results, don't we?
+            </span>
+            <mat-action-row>
+              <button mat-button class="btn move" (click)="nextStep()">Next</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Read
+              </mat-panel-title>
+              <mat-panel-description>
+                Read as much as you'd like, the way you you'd like
+                <mat-icon>map</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <span class="details">
+              Once we have some informations about you, you're free to start reading! Here you can choose to read whatever you'd like, whenever you'd like, 
+              however you'd like. Feel free to be creative and don't forget to update you measurements.
+            </span>
+
+            <mat-action-row>
+              <button mat-button class="btn move" (click)="prevStep()">Previous</button>
+              <button mat-button class="btn move" (click)="nextStep()">Next</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Play the game
+              </mat-panel-title>
+              <mat-panel-description>
+                Play our game
+                <mat-icon>videogame_asset</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            <span class="details">
+              We know that for some people, competition is one of the best ways to motivate them! That's why we created a training program which you can follow,
+               a program that trains your brain and let's you play a game at the same time. Have fun!
+            </span>
+
+            <mat-action-row>
+              <button mat-button class="btn move" (click)="prevStep()">Previous</button>
+              <button mat-button class="btn move" (click)="nextStep()">End</button>
+            </mat-action-row>
+          </mat-expansion-panel>
+
+        </mat-accordion>
+        <button mat-button class="btn login" (click)="start()">Start your journey now</button>
+      </div>
+    </div>
+  </div>
+</body>

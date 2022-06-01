@@ -1,0 +1,29 @@
+<div *ngIf="showSideNav" class="row justify-content-md-center">
+    <div class="row">
+        <div>
+            <button mat-button (click)="logout()" type="button" class="btn right">Logout</button>
+            <button mat-icon-button (click)="sidenav.toggle()" class="btn menu">
+                <mat-icon class="menu-icon">menu</mat-icon>
+            </button> 
+
+            <div class="title">
+                <img src="/assets/books8.png" class="book-icon">
+                <a href="/home">Readlings</a>
+            </div>
+            <nav mat-tab-nav-bar mat-align-tabs="end">
+                <a mat-tab-link routerLink="/home" routerLinkActive="active-link">
+                    <span class="tab-title">About</span>
+                </a>
+                <a mat-tab-link routerLink="/measure" routerLinkActive="active-link">
+                    <span class="tab-title">Measure</span>
+                </a>
+                <a mat-tab-link routerLink="/reading-settings" routerLinkActive="active-link">
+                    <span class="tab-title">Read</span>
+                </a>
+                <a mat-tab-link routerLink="/game" routerLinkActive="active-link">
+                    <span class="tab-title">Play</span>
+                </a>
+            </nav>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<html>
+
+<body>
+    <div class="sidenav-content">
+        <mat-icon class="user-icon" aria-hidden="false" aria-label="User icon">account_circle</mat-icon>
+
+        <mat-accordion>
+            <mat-expansion-panel (click)="getProfile()" (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Profile
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div *ngIf="isProfile" class="panel-content">
+                    <div class="info">
+                        <span>USERNAME:</span>
+                        <span class="info-name">{{currentUser.username}}</span>
+                    </div>
+                    <div class="info">
+                        <span>SCORE:</span>
+                        <span class="info-name">{{currentUser.score}}</span>
+                    </div>
+                    <div class="info">
+                        <span>AREA:</span>
+                        <span class="info-name">{{currentUser.currentArea}}</span>
+                    </div>
+                    <div class="info">
+                        <span>LEVEL:</span>
+                        <span class="info-name">{{currentUser.currentLevel}}</span>
+                    </div>
+                    <div class="info">
+                        <span>AGE:</span>
+                        <span class="info-name">{{currentUser.age}}</span>
+                    </div>
+                    <div class="info">
+                        <span>Initial speed:</span>
+                        <span class="info-name">{{currentUser.speed![0]}}</span>
+                    </div>
+                    <div class="info">
+                        <span>Current speed:</span>
+                        <span class="info-name">{{currentUser.speed![currentUser.speed!.length-1]}}</span>
+                    </div>
+                    <div class="info">
+                        <span>Level of attention:</span>
+                        <span class="info-name">{{currentUser.attention![currentUser.attention!.length-1]}}</span>
+                    </div>
+
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (click)="getChallenges()" (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Completed Challenges
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <div *ngFor="let challenge of doneChallenges" class="panel-content">
+                    <div class="info">{{challenge.title}}</div>
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (click)="getUploadedBooks()" (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Uploaded Books
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div *ngFor="let book of userBooks" class="panel-content">
+                    <div class="info">{{book.title}}</div>
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (click)="getfinishedPredefBooks()" (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Finished Books
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div *ngFor="let book of userFinishedPredefBooks" class="panel-content">
+                    <div class="info">{{book.title}}</div>
+                </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Game Settings
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="panel-content">
+                    <button mat-button class="btn navbar" (click)="changeLevel()">Change level</button>
+                </div>
+            </mat-expansion-panel>
+<!-- 
+            <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Settings
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <button mat-button class="btn navbar">Update</button>
+            </mat-expansion-panel> -->
+        </mat-accordion>
+    </div>
+
+</body>
+
+</html>

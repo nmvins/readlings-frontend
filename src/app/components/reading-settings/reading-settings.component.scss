@@ -1,0 +1,278 @@
+:host {
+
+  body{
+    width: 100%;
+    margin:0;
+  }
+
+  .content {
+    height: 100%;
+    margin: 0;
+  }
+  .navbar-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .row {
+    height: 100%;
+    margin: 0;
+  }
+
+  .one {
+    height: 100%;
+    background-color: #140f16; //#1f1027;
+
+    font-family: 'Berlin Sans FB';
+    color: #afafaf;
+
+    // margin: 0;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // -ms-transform: translate(-50%, -50%);
+    // transform: translate(-50%, -50%);
+  }
+
+  .next {
+    background-image: url("/assets/books9R.png");
+    background-repeat: no-repeat;
+    background-position:center;
+  }
+
+  .intro-right {
+    width: 200px;
+    line-height: 30px;
+    margin-top: 140px;
+    margin-left: 370px;
+    // border: 10px solid #5a5b69;
+    // border-radius: 2em;
+    // background-color: #5a5b69;
+
+    font-size: 50px;
+    color: #afafaf;
+  }
+
+  .intro-title {
+    margin-left: 200px;
+    margin-top: 200px;
+    font-size: 50px;
+  }
+
+  .intro-description-first {
+    width: 500px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 200px;
+    text-align: center;
+  }
+
+  .intro-description-second {
+    width: 500px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 200px;
+
+    border: 10px solid #5a5b69;
+    border-radius: 7px;
+    box-shadow: 0px 10px 12px 1px #5a5b69;
+    background-color: #5a5b69;
+
+    color: #afafaf;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .two {
+    height: 100%;
+    background-color: #ffffff;
+
+    font-family: 'Berlin Sans FB';
+  }
+
+
+  .btn.menu {
+    width: 30px;
+    height: 30px;
+    border-radius: 2em;
+
+    font-family: 'Berlin Sans FB';
+    font-size: 10px;
+
+    color: #f0e5e5;
+    background-color: #5a5b69;
+    border-color: white;
+
+    margin: 0 auto;
+    position: absolute;
+    margin-top: 450px;
+    margin-left: 450px;
+  }
+
+  .menu-icon {
+    font-size: 10px;
+    position: relative;
+    left: -10px;
+    top: 2px;
+  }
+
+  .stepper {
+    margin-top: 200px;
+
+    font-family: 'Berlin Sans FB', sans-serif;
+  }
+
+  .form-field {
+    margin-top: 16px;
+
+    font-family: 'Berlin Sans FB', sans-serif;
+  }
+
+  .radiogroup-intro-first {
+    margin-left: 200px;
+    margin-top: 200px;
+    font-size: 30px;
+  }
+
+  .radiogroup-intro-second {
+    width: 600px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 160px;
+
+    padding: 10px;
+
+    border: 10px solid #5a5b69;
+    border-radius: 7px;
+    box-shadow: 0px 10px 12px 1px #5a5b69;
+    background-color: #5a5b69;
+
+    color: #afafaf;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .radiogroup-intro-third {
+    width: 600px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 160px;
+
+    padding: 10px;
+
+    border: 10px solid #5a5b69;
+    border-radius: 7px;
+    box-shadow: 0px 10px 12px 1px #5a5b69;
+    background-color: #5a5b69;
+
+    color: #afafaf;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    margin-left: 400px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+    font-family: 'Berlin Sans FB', sans-serif;
+  }
+
+  .radio-button {
+    margin: 5px;
+    font-family: 'Berlin Sans FB', sans-serif;
+  }
+
+  .btn-upload {
+    width: 100px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-size: 13px;
+
+    color: #f0e5e5;
+    background-color: #5a5b69;
+    border-color: white;
+
+    margin-left: 40%;
+  }
+
+  .file-input {
+    display: none;
+  }
+
+  .file-upload.text {
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-size: 13px;
+  }
+
+  .btn-predefined {
+    width: 200px;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-size: 13px;
+
+    color: #f0e5e5;
+    background-color: #5a5b69;
+    border-color: white;
+    margin-left: 40%;
+  }
+
+  // .btn-show {
+  //   width: 100px;
+  //   height: 40px;
+  //   margin-left: 45%;
+  //   border-radius: 2em;
+  //   font-family: 'Berlin Sans FB', sans-serif;
+  //   font-size: 13px;
+
+  //   color: #f0e5e5;
+  //   background-color: #5a5b69;
+  //   border-color: white;
+  // }
+
+  .file-content {
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-size: 13px;
+  }
+
+  .btn-start {
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 7px;
+    box-shadow: 0px 10px 12px 1px #5a5b69;
+
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-size: 13px;
+
+    color: #f0e5e5;
+    background-color: #5a5b69;
+    border-color: white;
+  }
+
+  .btn-next {
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    box-shadow: 0px 10px 12px 1px #5a5b69;
+
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-size: 13px;
+
+    color: #f0e5e5;
+    background-color: #5a5b69;
+    border-color: white;
+  }
+
+}

@@ -1,0 +1,243 @@
+:host {
+
+  body {
+    width: 100%;
+    margin: 0;
+  }
+
+  .content {
+    height: 100%;
+    margin: 0;
+  }
+
+  .row {
+    height: 100%;
+    margin: 0;
+  }
+
+  .one {
+    height: 100%;
+    background-color: #140f16; //#1f1027;
+    background-position: right;
+    background-image: url("/assets/bgr4.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .img {
+    height: 100%;
+    background-position: right;
+    background-image: url("/assets/readbgr1.png");
+    background-repeat: no-repeat;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .two {
+    height: 100%;
+    background-color: #ffffff;
+
+    font-family: 'Berlin Sans FB';
+  }
+
+  .first {
+    margin: auto;
+    margin-left: 120px;
+    margin-top: 300px;
+    color: #5a5b69;
+    font-family: 'Berlin Sans FB';
+    font-size: 40px;
+  }
+
+  .second {
+    margin: auto;
+    margin-left: 100px;
+    color: #5a5b69;
+    font-family: 'Berlin Sans FB';
+    font-size: 50px;
+  }
+
+  .third {
+    width: 200px;
+    margin: auto;
+    margin-left: 120px;
+    text-align: center;
+    color: #5a5b69;
+    font-family: 'Berlin Sans FB';
+    font-size: 20px;
+  }
+
+  .intro-title {
+    margin-left: 200px;
+    margin-top: 200px;
+    font-size: 50px;
+  }
+
+  .intro-description-first {
+    width: 500px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 200px;
+    text-align: center;
+  }
+
+  .intro-description-second {
+    width: 500px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 200px;
+
+    border: 10px solid #5a5b69;
+    border-radius: 5px;
+    box-shadow: 0px 10px 12px 1px #5a5b69;
+    background-color: #5a5b69;
+
+    color: #afafaf;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .three {
+    padding-top: 300px;
+    background-color: #140f16;
+    color: #afafaf;
+
+  }
+
+  .btn.menu {
+    width: 30px;
+    height: 30px;
+    border-radius: 2em;
+
+    font-family: 'Berlin Sans FB';
+    font-size: 10px;
+
+    color: #f0e5e5;
+    background-color: #5a5b69;
+    border-color: white;
+
+    margin-top: 50px;
+    margin-left: 200px;
+    position: absolute;
+  }
+
+  .btn.menu.middle{
+    width: 30px;
+    height: 30px;
+    border-radius: 2em;
+
+    font-family: 'Berlin Sans FB';
+    font-size: 10px;
+
+    color: #f0e5e5;
+    background-color: #5a5b69;
+    border-color: white;
+
+    margin: 0 auto;
+    margin-top: 900px;
+    margin-left: 900px;
+    position: absolute;
+  }
+
+
+  .menu-icon {
+    font-size: 10px;
+    position: relative;
+    left: -10px;
+    top: 2px;
+  }
+
+  .mat-expansion-panel-header {
+    font-family: 'Berlin Sans FB';
+    font-size: 15px;
+  }
+
+  .items-headers-align .mat-expansion-panel-header-title,
+  .items-headers-align .mat-expansion-panel-header-description {
+    flex-basis: 0;
+    color: #afafaf;
+
+  }
+
+  .items-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+    color: #afafaf;
+
+  }
+
+  .items-headers-align .mat-form-field+.mat-form-field {
+    margin-left: 8px;
+    color: #afafaf;
+
+  }
+
+  .mat-expansion-panel-header.mat-expanded,
+  .mat-expansion-panel-header.mat-expanded:hover {
+    background-color: #5a5b69;
+    color: #afafaf;
+  }
+
+  .mat-expansion-panel-header,
+  .mat-expansion-panel-header.mat-expanded {
+    background-color: #5a5b69;
+    color: #afafaf;
+
+  }
+
+  .mat-expansion-panel {
+    background-color: #5a5b69;
+    width: 800px;
+    margin-left: 500px;
+    color: #afafaf;
+  }
+
+  .details{
+    width: 100%;
+    font-family: 'Berlin Sans FB';
+    font-size: 15px;
+    float: left;
+  }
+
+  .three .btn.move {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 12px 1px #5a5b69;
+    margin-top: 13px;
+    margin-left: 10px;
+    float: right;
+
+    font-family: 'Berlin Sans FB';
+    font-size: 10px;
+
+    color: #f0e5e5;
+    background-color: #5a5b69;
+    border-color: white;
+  }
+
+  .three .btn.login {
+    width: 170px;
+    height: 50px;
+    border-radius: 7px;
+    box-shadow: 0px 10px 12px 1px #5a5b69;
+    margin-top: 13px;
+
+    font-family: 'Berlin Sans FB';
+    font-size: 15px;
+ 
+    color: #afafaf;
+    background-color: #140f16;
+    border-color: white;
+
+    position: absolute;
+    margin-left: 800px;
+  }
+
+  .three .btn.login:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: #5a5b69;
+}
+}

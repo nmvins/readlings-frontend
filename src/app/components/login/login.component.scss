@@ -1,0 +1,184 @@
+:host {
+
+    body {
+        font-family: 'Berlin Sans FB', sans-serif;
+        background-color: #140f16;
+    }
+    
+    .form-container {
+        border: 0px;
+        border-radius: 7px;
+        box-shadow: 0px 10px 12px 1px #5a5b69;
+
+        font-family: 'Berlin Sans FB', sans-serif;
+        color: #afafaf;
+
+        //background-image: linear-gradient(to right, #312d44, #a5a2a79e);
+        width: 1100px;
+        height: 700px;
+        background-color: #140f16;
+        margin: auto;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .form-container:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        background-color: #5a5b69;
+    }
+
+
+    img {
+        margin-top: 180px;
+    }
+
+    .login-container {
+        margin-left: 130px;
+        margin-top: 150px;
+    }
+
+    .login-intro {
+        margin-bottom: 20px;
+        margin-left: 20px;
+        font-family: 'Berlin Sans FB', sans-serif;
+        font-size: large;
+    }
+
+    .login-intro-title {
+        margin-bottom: 20px;
+        margin-left: 20px;
+        font-family: 'Berlin Sans FB', sans-serif;
+        font-size: xx-large;
+    }
+
+    input {
+        width: 400px;
+        height: 60px;
+
+        border-color: white;
+        border-radius: 7px;
+
+        margin-top: 20px;
+
+        font-family: 'Berlin Sans FB', sans-serif;
+        box-shadow: 0px 10px 12px 1px #5a5b69;
+        background-color: #140f16;
+
+        color: #afafaf;
+    }
+
+    input:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        background-color: #5a5b69;
+    }
+
+    input:focus::placeholder {
+        font-size: small;
+        position: absolute;
+        font-family: 'Berlin Sans FB', sans-serif;
+    }
+
+    input:focus {
+        outline-color: black;
+        border-color: black;
+    }
+
+    .btn.login {
+        width: 20%;
+        height: 50px;
+        margin-left: 45px;
+        margin-top: 40px;
+
+        font-family: 'Berlin Sans FB';
+        font-size: 15px;
+
+        background-color: #140f16;
+        box-shadow: 0px 10px 12px 1px #5a5b69;
+
+        border-radius: 7px;
+        border-color: white;
+        color: #afafaf;
+    }
+
+    .btn.login:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        background-color: #5a5b69;
+    }
+
+    .btn.signup {
+        width: 30%;
+        height: 50px;
+
+        margin-left: 40px;
+        margin-top: 20px;
+
+        font-family: 'Berlin Sans FB';
+        font-size: 15px;
+
+        color: #afafaf;
+        border-radius: 7px;
+        border-color: white;
+
+        background-color: #140f16;
+        box-shadow: 0px 10px 12px 1px #5a5b69;
+    }
+
+    .btn.signup:hover {
+        box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        background-color: #5a5b69;
+    }
+
+    .title {
+        //font-size: 20px;
+        //font-weight: bold;
+        margin-left: 0px;
+        font-family: 'Berlin Sans FB', sans-serif;
+        font-size: 30px;
+        color: white;
+    }
+
+    .tab-title {
+        font-family: 'Berlin Sans FB', sans-serif;
+        font-size: large;
+        color: #9e9696;
+    }
+
+    .book-icon {
+        margin-top: 5px;
+        height: 40px;
+        width: 40px;
+    }
+
+
+    .signup-container {
+        margin-left: 580px; //620
+        margin-top: 100px;
+    }
+
+    .signup-container input {
+        width: 400px;
+        height: 60px;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .signup-intro {
+        margin-bottom: 20px;
+        margin-left: 5px;
+        font-family: 'Berlin Sans FB', sans-serif;
+        font-size: large;
+
+    }
+
+    .signup-intro-title {
+        margin-bottom: 20px;
+        margin-left: 5px;
+        font-family: 'Berlin Sans FB', sans-serif;
+        font-size: xx-large;
+
+    }
+}

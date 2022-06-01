@@ -1,0 +1,12 @@
+What date did "The Olympia" sail?
+22nd,25th,23rd -c
+Where were the goods stored until they were stolen? (from The Million Dollar Bond Robbery)
+Briefcase,Trunk -c,Suitcase.
+How did they open the trunk?
+With a key -c,Forced it,Burned it
+Who gave Poirot a card for the bank?
+[Hastings,Ridgeway -c,Vavasour
+When is "The Olympia" due to return from New York?
+Tuesday -c,Friday,Saturday
+Who was the criminal?
+Ridgeway,Vavasour,Shaw -c

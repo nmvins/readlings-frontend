@@ -1,0 +1,12 @@
+How much did Mr Maltravers insure his life for?
+10.000 pounds,15.000 pounds,50.000 pounds -c
+Where did they find blood on the victim's body?
+arms,legs,lips -c
+When was the last time Mrs. Maltravers has seen her husband on Wednesday?
+at lunch -c,before sleep,after dinner
+What was the man's name?
+Mr. Matravers,Captain Black -c,It wasn't mentioned
+What did the woman hear?
+footsteps,loud noises,Three taps on the window -c
+Who confessed to killing the man?
+Mrs. Maltravers -c,Everett,No one

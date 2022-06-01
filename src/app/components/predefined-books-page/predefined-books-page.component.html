@@ -1,0 +1,38 @@
+<body>
+
+  <div class="content">
+    <div class="row">
+      <div class="title">BOOKS</div>
+    </div>
+
+    <div class="row">
+      <div class="page-intro">
+        Our app is offering you a wide range of books from different domains. You can choose any of them to read, as
+        many times as you want.
+        We chose the best books for you, that we thought would help you train.
+      </div>
+    </div>
+
+    <div class="row choose">
+      <button (click)="choose()" class="btn-choose">Choose</button>
+      </div>
+
+    <div class="row">
+      <div class="books">
+
+        <span *ngFor="let book of bookList">
+          <button [class.selected]="book === selectedBook" class="btn-book" (click)="onSelect(book)">
+            <span class="name">{{book.title | uppercase}}</span>
+            <div *ngIf="selectedBook === book" class="details">
+              <div>
+                <div class="book-author">Author: {{selectedBook.author}}</div>
+                <div class="book-descrition">Description: {{selectedBook.description}}</div>
+              </div>
+            </div>
+          </button>
+        </span>
+
+      </div>
+    </div>
+  </div>
+</body>

@@ -18,9 +18,11 @@
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
+    "strictPropertyInitialization": false,
     "lib": [
       "es2020",
-      "dom"
+      "dom",
+      "ES2021.String"
     ]
   },
   "angularCompilerOptions": {

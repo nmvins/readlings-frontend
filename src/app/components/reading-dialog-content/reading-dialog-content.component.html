@@ -1,0 +1,40 @@
+<body>
+    <div *ngIf="isBookNotChosen" class="third">
+        <div>
+            You didn't choose a book.
+        </div>
+    </div>  
+    
+    <div *ngIf="isCorrect && isAnswered && !isBookNotChosen && !isUploaded" class="second">
+        <div>
+            Congrats! Your answers are correct.
+        </div>
+        <div>
+            <button (click)="confirmCorrect()" type="button" class="btn-read">Confirm</button>
+        </div>
+    </div>  
+
+    <div *ngIf="!isCorrect && !isBookNotChosen && isAnswered && !isUploaded" class="second">
+        <div>
+            Your answers are not correct. You should try again!
+        </div>
+        <div>
+            <button (click)="confirm()" type="button" class="btn-read">Ok</button>
+        </div>
+    </div>
+
+    <div *ngIf="isUploaded" class="second">
+        <div>
+            If you are not satisfied with your answers, you should read again. If you are, then great! You should move on to something harder.
+        </div>
+        <div>
+            <button (click)="confirm()" type="button" class="btn-read">Ok</button>
+        </div>
+    </div>
+    
+    <div *ngIf="!isAnswered && !isBookNotChosen && !isUploaded" class="third">
+        <div>
+            You didn't answer all questions.
+        </div>
+    </div>
+</body>

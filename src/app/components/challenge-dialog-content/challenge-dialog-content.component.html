@@ -1,0 +1,50 @@
+<body>
+
+    <div *ngIf="isCorrect && isAnswered" class="second">
+        <div>
+            Congrats! You finished this challenge. Click ok.
+        </div>
+        <div>
+            <button (click)="ok()" type="button" class="btn-second">OK</button>
+        </div>
+    </div>
+
+    <div *ngIf="startChallenge" class="third">
+        <p>Challenge will start in</p>
+        <div>{{seconds}}</div>
+    </div>
+
+
+    <div *ngIf="isDone" class="first">
+        <label id="radio-group-label">{{question}}</label>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="choice">
+            <div>
+                <mat-radio-button class="radio-button" *ngFor="let answer of answers" [value]="answer">
+                    {{answer}}
+                </mat-radio-button>
+            </div>
+        </mat-radio-group>
+        <div>Your answer is:</div>
+        <div>{{choice}}</div>
+
+        <div>
+            <button (click)="confirm()" type="button" class="btn-read">Confirm</button>
+        </div>
+    </div>
+
+
+    <div *ngIf="!isCorrect && isAnswered" class="second">
+        <div>
+            Your answer was not correct. You didn't pass the challenge.
+        </div>
+
+        <div>
+            <button (click)="ok()" type="button" class="btn-second">OK</button>
+        </div>
+    </div>
+
+    <div *ngIf="notEnoughPoints" class="third">
+        Sorry, you don't have enough points
+    </div>
+
+</body>

@@ -1,0 +1,35 @@
+:host {
+    body {
+        font-family: 'Berlin Sans FB', sans-serif;
+        font-size: 20px;
+    }
+
+    .second {
+        width: 400px;
+        height: 200px;
+        text-align: center;
+    }
+
+    .third {
+        width: 300px;
+        height: 50px;
+        text-align: center;
+    }
+
+    .btn-read {
+        width: 100px;
+        height: 40px;
+        border-radius: 7px;
+        font-family: 'Berlin Sans FB', sans-serif;
+        font-size: 13px;
+    
+        box-shadow: 0px 10px 12px 1px #5a5b69;
+        color: #f0e5e5;
+        background-color: #5a5b69;
+        border-color: white;
+    
+        margin: auto;
+        margin-top: 50px;
+      }
+    }  
+  

@@ -1,0 +1,57 @@
+<div class="reading-container">
+    <div>
+        <button (click)="read()" type="button" class="btn-read" id="read">Read</button>
+    </div>
+
+    <div class="text-container">
+        <div *ngIf="read && method == '0'">
+            <p>{{word}}</p>
+        </div>
+
+        <div *ngIf="read && method == '1'"> 
+            <span *ngFor="let word of finalWords">
+                <span [class.coloring]="word.highlight" class="text-format">{{word.text}} </span>
+            </span>
+        </div>
+
+
+        <div *ngIf="read && method == '2'">
+            <span *ngFor="let word of finalWords">
+                <span [class.highlight]="word.highlight" class="text-format">{{word.text}} </span>
+            </span>
+        </div>
+
+        <div *ngIf="read && method == '3'">
+            <span *ngFor="let word of finalWords">
+                <span [class.square]="word.highlight" class="text-format">{{word.text}} </span>
+            </span>
+        </div>
+
+        <div *ngIf="read && method == '4'">
+            <span *ngFor="let word of finalWords">
+                <span [class.underlining]="word.highlight" class="text-format">{{word.text}} </span>
+            </span>
+        </div>
+
+
+        <div *ngIf="read && method == '5'">
+            <span *ngFor="let word of finalWords">
+                <span [class.bold]="word.highlight" class="text-format">{{word.text}} </span>
+            </span>
+        </div>
+
+
+        <div *ngIf="read && method == '6'">
+            <span *ngFor="let word of finalWords">
+                <span [class.italText]="word.highlight" class="text-format">{{word.text}} </span>
+            </span>
+        </div>
+
+
+        <div *ngIf="read && method == '7'">
+            <div *ngIf="slidingTrue" class="slide" [style]="getAnimationDuration()">{{word}} </div>
+            <div *ngIf="slidingFalse" class="slide" [style]="getAnimationDuration()">{{word}} </div>
+        </div>
+    </div>
+
+</div>

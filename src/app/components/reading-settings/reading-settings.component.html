@@ -1,0 +1,135 @@
+<body>
+  <div class="content">
+    <div class="row">
+      <div class="col-sm one">
+        <div class="intro-title">The Readlings Solutions</div>
+        <div class="intro-description-first">
+          Our solutions include a full training-game program for you to follow and use in order to increase your speed.
+          We designed the program the best way we thought in order to fit most of the people who want to use our app.
+          If you want a more personalized experience, you can choose you own settings.
+        </div>
+
+        <div class="intro-description-second">
+          This app provides you a series of different books and articles to read. If you want to, you can have a look at them and read them.
+          If you want to read your own book, you can upload one. Also, there are several settings options from which you can choose to personalize 
+          the way you read. Al these books will be stored and you can view them on your profile. After you read something, you will have to answer a few 
+          question to check whether you understood the text or not.
+        </div>
+      </div>
+      <div class="col-sm one next">
+        <div class="intro-right">Ready to begin your journey?</div>
+        <button mat-icon-button (click)="scrollToElement(target)" class="btn menu">
+          <mat-icon class="menu-icon">keyboard_arrow_down</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div #target class="row" id="target">
+      <div class="col-sm two">
+        <label for="optional-label-group" class="radiogroup-intro-first">First, let's start with what you want to
+          read</label>
+        <div class="radiogroup-intro-second">There are two ways you can choose: either upload something that you would
+          like, or choose one of the
+          books/articles we have for you.
+          You can see a list of them by choosing 'Predefined books' option below.
+        </div>
+        <mat-radio-group id="optional-label-group" class="radio-group" [(ngModel)]="optionalLabelText"
+          (ngModelChange)="updateOptionalLabel()">
+          <mat-radio-button class="radio-button" *ngFor="let optionalLabelTextChoice of optionalLabelTextChoices"
+            [value]="optionalLabelTextChoice">
+            {{optionalLabelTextChoice}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <div>
+          <div *ngIf="predefBookChoice">
+            <button (click)="selectPredefinedBooks()" type="button" class="btn-predefined">Select from predefined
+              books</button>
+          </div>
+
+          <div *ngIf="uploadChoice">
+            <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload>
+            <span class="file-upload">
+              <button (click)="fileUpload.click()" type="button" class="btn-upload">Choose file</button>
+              <span class="file-upload text">{{fileName || "No file uploaded yet."}}</span>
+            </span>
+          </div>
+        </div>
+        <div class="radiogroup-intro-third">After choosing your desired lecture, you will have to choose the way you
+          want to read.
+          This means choosing a method, a type of text split and a speed. These are all important factors that influence
+          your trainging. Choose carefully!
+        </div>
+      </div>
+
+      <div class="col-sm two">
+        <mat-stepper orientation="vertical" class="stepper" #stepper>
+
+          <mat-step errorMessage="Method is required.">
+            <ng-template matStepLabel>Choose your method</ng-template>
+            <mat-form-field class="form-field" appearance="fill">
+              <mat-label>Method</mat-label>
+              <mat-select [(ngModel)]="method" require>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let meth of methods; let i = index" [value]="i">
+                  {{meth}}
+                </mat-option>
+              </mat-select>
+              <!-- <mat-error *ngIf="methodControl.hasError('required')">Please choose a method</mat-error> -->
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext class="btn-next">Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step errorMessage="Text split is required.">
+            <ng-template matStepLabel>Choose your text splitting method</ng-template>
+            <mat-form-field class="form-field" appearance="fill">
+              <mat-label>Method</mat-label>
+              <mat-select [(ngModel)]="methodSettingText" required>
+                <mat-option>--</mat-option>
+                <mat-option *ngFor="let type of textTypes; let i = index" [value]="i">
+                  {{type}}
+                </mat-option>
+              </mat-select>
+              <!-- <mat-error *ngIf="typeControl.hasError('required')">Please choose a text type</mat-error> -->
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext class="btn-next">Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step errorMessage="Speed is required.">
+            <ng-template matStepLabel>Choose your speed</ng-template>
+            <mat-form-field class="form-field" appearance="fill">
+              <mat-label>Speed</mat-label>
+              <input type="number" matInput [(ngModel)]="speed" placeholder="words/minute" min="1">
+              <mat-icon matSuffix>timelapse</mat-icon>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext class="btn-next">Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step label="Text" errorMessage="Text is required">
+            <mat-form-field appearance="fill">
+              <mat-label>Text</mat-label>
+              <input matInput [(ngModel)]="fileName" readonly="true" value="fileName" />
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext class="btn-next">Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div *ngIf="isNotCompleted">You didn't complete all fields. All fields are required.</div>
+            <div>
+              <button (click)="start()" type="button" class="btn-start">Start</button>
+            </div>
+          </mat-step>
+        </mat-stepper>
+      </div>
+    </div>
+  </div>
+</body>

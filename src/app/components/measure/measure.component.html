@@ -1,0 +1,49 @@
+<body>
+    <div class="content">
+        <div class="row"> 
+            <div class="col-sm one">
+                <label for="optional-label-group" class="radiogroup-intro-first">Your first steps into beginning the journey</label>
+                <div class="radiogroup-intro-second">Before you can start training, we have to know a few things about you. 
+                    Let's start by measuring your level of attention.
+                    When you are ready, click on Start. The square will start changing its color. Try to follow the attention square
+                    and when you feel like you can't follow it anymore, click on Stop.
+                    This, way, we will know how much attention you will be able to pay to what you read today.
+                </div>
+             </div>
+            <div class="col-sm one">
+                <div class="attention-square" [class.flick]="flick"></div>
+                <div class="btn-control">
+                    <button (click)="start()" type="button" class="btn-attention" id="start">Start</button>
+                    <button (click)="stop()" type="button" class="btn-attention">Stop</button>
+                </div>
+                <button mat-icon-button (click)="scrollToElement(target)" id="scroll" class="btn menu middle">
+                    <mat-icon class="menu-icon">keyboard_arrow_down</mat-icon>
+                  </button>
+            </div>
+        </div>
+        <div #target class="row" id="target">
+            <div class="col-sm two">
+                <div class="radiogroup-intro-third">
+                    Now it's time to start reading. Don't you want to know how much you managed to progress in this training?
+                    Sure you do. That's why you have to measure your speed before reading. It's important to know your initial speed.
+                    When you are ready, click on Read. After you finish reading, click on Done. 
+                </div>
+                <div class="reading-container">
+                    <div>
+                        <button (click)="read()" type="button" class="btn-read" id="read" >Read</button>
+                    </div>
+
+                    <div class="text-container">
+                        {{text}}
+                    </div>
+
+                    <div>
+                        <button (click)="done()" type="button" class="btn-read">Done</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>

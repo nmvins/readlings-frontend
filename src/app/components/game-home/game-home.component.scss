@@ -1,0 +1,80 @@
+:host {
+
+  body{
+    width: 100%;
+    margin:0;
+  }
+
+  .content {
+    height: 100%;
+    margin: 0;
+
+    background-color: #140f16; 
+  }
+
+  .row {
+    margin: 0;
+  }
+
+  .title {
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    border: 10px solid #5a5b69;
+    border-radius: 7px;
+    box-shadow: 0px 10px 12px 1px #5a5b69;
+    background-color: #5a5b69;
+
+    color: #afafaf;
+    text-align: center;
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-size: 50px;
+  }
+
+  .intro {
+    width: 100%;
+    
+    color: #afafaf;
+    text-align: center;
+
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-size: 20px;
+  }
+
+  .btn-start {
+    width: 60%;
+    height: 400px;
+    margin-top: 100px;
+    margin-left: 150px;
+    border-radius: 7px;
+    box-shadow: 0px 10px 12px 1px #5a5b69;
+
+    padding-top: 250px;
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-size: 20px;
+
+    color: #afafaf;
+    background-color: #140f16;
+    border-color: white;
+  }
+
+  .challenge {
+    background-image: url("/assets/challengebgr.png");
+    background-repeat: no-repeat;
+    background-size: 300px 200px;
+    background-position: center;
+  }
+
+  .game {
+    background-image: url("/assets/gamebgr.png");
+    background-repeat: no-repeat;
+    background-size: 300px 120px;
+    background-position: center;
+  }
+
+  .btn-start:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: #5a5b69;
+  }
+}

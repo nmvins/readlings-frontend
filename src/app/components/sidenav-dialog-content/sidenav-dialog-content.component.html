@@ -1,0 +1,17 @@
+<body>
+    <div *ngIf="changeLevel" class="first">
+        <label id="radio-group-label">Please enter your desired values</label>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Level</mat-label>
+            <input type="number" matInput [(ngModel)]="level" min="1" max="{{maxLevel}}">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Area</mat-label>
+            <input type="number" matInput [(ngModel)]="area" min="1" max="{{maxArea}}">
+        </mat-form-field>
+        <div>
+            <button (click)="submit()" type="button" class="btn-read">Submit</button>
+        </div>
+    </div>
+</body>

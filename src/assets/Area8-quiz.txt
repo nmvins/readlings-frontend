@@ -1,0 +1,12 @@
+Who was one of the visitors?
+The prime minister,Lord Estair -c,The president
+What did the young officer bring to Lord Estair?
+Money,A sealed envelope -c,News
+What was an important detail that they omitted initially?
+The Prime Minister's car did not return home -c,The clothes the Prime Minister was wearing,Who drove the Prime Minister
+Who came to help Poirot?
+Detective Barnes and Major Norman -c,No one,Detective Dodge
+What did Major Norman bring?
+A map -c,A gun,Evidence
+Where were they standing at three o'clock?
+At the hospital,At a restaurant,Upon Charing Cross platform -c

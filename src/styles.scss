@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+html, body { height: 100%; }
+body { margin: 0;  font-family: 'Berlin Sans FB', sans-serif; }
+.error {
+    color: #afafaf !important;
+    background-color: #140f16;
+    .mat-simple-snackbar-action {
+        color: #afafaf !important;
+    }
+}

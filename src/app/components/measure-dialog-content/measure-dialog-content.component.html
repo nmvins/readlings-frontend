@@ -1,0 +1,72 @@
+<body>
+
+    <div *ngIf="isSquare && !isAge && !isNotComplete" class="second">
+        <div>
+            Great! Now we know your level of attention. Your level is: {{attention}}.
+        </div>
+        <div>
+            <button (click)="ok()" type="button" class="btn-second">OK</button>
+        </div>
+    </div>
+
+
+    <div *ngIf="!isDone && !isSquare && !isAge && !isNotComplete" class="first">
+        <label id="radio-group-label" class="question">{{question}}</label>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="choice">
+            <div>
+                <mat-radio-button class="radio-button" *ngFor="let answer of answers" [value]="answer">
+                    {{answer}}
+                </mat-radio-button>
+            </div>
+        </mat-radio-group>
+        <div>Your answer is:</div>
+        <div>{{choice}}</div>
+
+        <div>
+            <button (click)="confirm()" type="button" class="btn-read">Confirm</button>
+        </div>
+    </div>
+
+
+    <div *ngIf="!isCorrect && isDone && !isSquare && !isAge && !isNotComplete" class="second">
+        <div>
+            Your answer was not correct. You have to do it again.
+        </div>
+
+        <div>
+            <button (click)="ok()" type="button" class="btn-second">OK</button>
+        </div>
+    </div>
+
+    <div *ngIf="isCorrect && isDone && !isSquare && !isAge && !isNotComplete" class="second">
+        <div>
+            Great! Now we know your speed of reading. Your speed is: {{speed}} words/min
+        </div>
+        <div>
+            <button (click)="ok()" type="button" class="btn-second">OK</button>
+        </div>
+    </div>
+
+    <div *ngIf="!isSquare && isAge && !isNotComplete" class="first">
+        <div>
+            Age is an important factor when it comes to someone's level of attention. Please tell us your age for more
+            accurate results:
+        </div>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Age</mat-label>
+            <input type="number" matInput [(ngModel)]="age" placeholder="years" min="1">
+        </mat-form-field>
+        <div>
+            <button (click)="submitAge()" type="button" class="btn-read">Submit</button>
+        </div>
+    </div>
+
+    <div *ngIf="!isSquare && !isAge && isNotComplete" class="second">
+        <div>
+            Please complete your measurements first.
+        </div>
+        <div>
+            <button (click)="ok()" type="button" class="btn-second">OK</button>
+        </div>
+    </div>
+</body>

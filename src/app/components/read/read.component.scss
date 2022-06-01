@@ -1,0 +1,92 @@
+:host {
+
+  .coloring {
+    color: rgb(117, 53, 53);
+  }
+
+  .highlight {
+    background-color: rgb(117, 53, 53);
+  }
+
+  .square {
+    border: 1px solid rgb(117, 53, 53);
+  }
+
+
+  .underlining {
+    text-decoration: underline;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .italText {
+    font-style: italic;
+  }
+
+  .slide {
+    animation-name: slidein;
+  }
+
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+  .navbar-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .btn-read {
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-size: 13px;
+
+    box-shadow: 0px 10px 12px 1px #5a5b69;
+    color: #f0e5e5;
+    background-color: #5a5b69;
+    border-color: white;
+
+    margin-left: 40%;
+    margin-bottom: 20px;
+  }
+
+  .text-container {
+    border: 1px solid black;
+    padding: 20px;
+
+    font-family: 'Berlin Sans FB', sans-serif;
+    font-size: 20px;
+  }
+
+  .text-format{
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  .reading-container {
+    width: 40%;
+    height: 70%;
+    margin: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+  }
+}

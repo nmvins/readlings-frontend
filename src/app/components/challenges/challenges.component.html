@@ -1,0 +1,117 @@
+<body>
+
+<div class="content">
+    <div class="row">
+        <div *ngIf="isUserLoaded">Score: {{currentUser.score}}</div>
+    </div>
+
+    <div class="row">
+        <div class="page-intro">
+            If you feel like you want to try something a bit different, we provided you a list of challenges from which you can choose to play.
+            When a challenge is completed, it will be marked with green color.
+            Any completed challenge gives you 500 points.
+            Challenges will be unlocked every time you complete an Area from the game.
+            Premium challenges cost 4000 points and you can only unlock them with score points.
+        </div>
+    </div>
+    <div class="row">
+        <div class="unlocked">
+            <div class="type">
+                Unlocked challenges
+            </div>
+
+            <div class="cards-group">
+                <mat-card class="unlocked-card" *ngFor="let challenge of unlockedChallenges">
+                    <mat-card-header>
+                        <span mat-card-avatar class="header-image" style="background-image: url('/assets/{{challenge.difficulty}}.png');"></span>
+                        <mat-card-title>{{challenge.title}}</mat-card-title>
+                        <mat-card-subtitle>{{challenge.difficulty}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="/assets/{{challenge.title}}.png" alt="Challenge picture" class="card-image">
+                    <mat-card-content class="unlocked-card-content">
+                        <p>
+                            {{challenge.description}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button class="card-button" mat-button (click)="start(challenge)">Start</button>
+                    </mat-card-actions>
+                </mat-card>
+                <mat-card class="unlocked-card" *ngFor="let challenge of doneChallenges">
+                    <mat-card-header>
+                        <span mat-card-avatar class="header-image" style="background-image: url('/assets/{{challenge.difficulty}}.png');"></span>
+                        <mat-card-title class="done">{{challenge.title}}</mat-card-title>
+                        <mat-card-subtitle>{{challenge.difficulty}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="/assets/{{challenge.title}}.png" alt="Challenge picture" class="card-image">
+                    <mat-card-content class="unlocked-card-content">
+                        <p>
+                            {{challenge.description}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button class="card-button" mat-button (click)="start(challenge)">Start</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="existing">
+            <div class="type">
+                Locked challenges
+            </div>
+
+            <div class="cards-group">
+                <mat-card class="existing-card" *ngFor="let challenge of lockedChallenges">
+                    <mat-card-header [class.done]="challenge.isFinished == true">
+                        <span mat-card-avatar class="header-image" style="background-image: url('/assets/{{challenge.difficulty}}.png');"></span>
+                        <mat-card-title>{{challenge.title}}</mat-card-title>
+                        <mat-card-subtitle>{{challenge.difficulty}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="/assets/{{challenge.title}}.png" alt="Challenge picture" class="card-image">
+                    <mat-card-content class="existing-card-content">
+                        <p>
+                            {{challenge.description}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions class="existing-card-content">
+                        <button class="card-button" [class.locked]="challenge.isUnlocked != true"
+                            [disabled]="!challenge.isUnlocked" mat-button (click)="start(challenge)">Start</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="premium">
+            <div class="type">
+                Premium challenges
+            </div>
+
+            <div class="cards-group">
+                <mat-card class="premium-card" *ngFor="let challenge of premiumChallenges">
+                    <mat-card-header class="premium-card-content">
+                        <span mat-card-avatar class="header-image" style="background-image: url('/assets/{{challenge.difficulty}}.png');"></span>
+                        <mat-card-title>{{challenge.title}}</mat-card-title>
+                        <mat-card-subtitle>{{challenge.difficulty}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="/assets/{{challenge.title}}.png" alt="Challenge picture" class="card-image">
+                    <mat-card-content class="premium-card-content">
+                        <p>
+                            {{challenge.description}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions class="premium-card-content">
+                        <button class="card-button" [class.locked]="challenge.isUnlocked != true"
+                            [disabled]="!challenge.isUnlocked" mat-button (click)="start(challenge)">Start</button>
+                        <button class="card-button" mat-button (click)="unlock(challenge)">Unlock</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

@@ -1,0 +1,77 @@
+:host {
+
+  .justify-content-md-center {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+  }
+
+  .row {
+    height: 5%;
+    background-color: #140f16;
+  }
+
+  .btn.right {
+    width: 80px;
+    height: 30px;
+    border-radius: 7px;
+    margin-top: 10px;
+    float: right;
+
+    font-family: 'Berlin Sans FB';
+    font-size: 10px;
+
+    color: #f0e5e5;
+    background-color: #5a5b69;
+    border-color: white;
+  }
+
+  .btn.menu {
+    width: 30px;
+    height: 30px;
+    border-radius: 7px;
+    margin-top: 10px;
+    float: left;
+
+    font-family: 'Berlin Sans FB';
+    font-size: 10px;
+
+    color: #f0e5e5;
+    background-color: #5a5b69;
+    border-color: white;
+  }
+
+  .menu-icon {
+    font-size: 10px;
+    position: relative;
+    left: -9px;
+    top: 1px;
+  }
+
+  .tab-title {
+    font-family: 'Berlin Sans FB';
+    font-size: 15px;
+    color: white;
+  }
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .title {
+    float: left;
+
+    margin: 0;
+    font-family: 'Berlin Sans FB';
+    font-size: 30px;
+    color: #5a5b69;
+  }
+
+  a{
+    text-decoration: none;
+     color: #5a5b69;
+  }
+}

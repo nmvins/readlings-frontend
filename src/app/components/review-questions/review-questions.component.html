@@ -1,0 +1,130 @@
+<body>
+    <div *ngIf="isPredefined" class="content">
+        <div class="intro">Great! You finished reading, now it's time to take a test. Don't worry, nothing bad is gonna
+            happen if you fail! To check how much you understood from the text, you have to answer a few questions.
+            If your results are bad, then you should probably try an easier way of reading. If you get everything
+            perfect, then you should try something harder.
+        </div>
+        <mat-accordion class="items-headers-align">
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{questions[0]}}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-action-row>
+                    <mat-radio-group aria-labelledby="radio-group-label" class="radio-group"
+                        [(ngModel)]="userAnswers[0]">
+                        <div>
+                            <mat-radio-button class="radio-button" *ngFor="let answer of answers[0]"
+                                [value]="answer">
+                                {{answer}}
+                            </mat-radio-button>
+                        </div>
+                    </mat-radio-group>
+                    <button mat-button class="btn move" (click)="nextStep()">Next</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{questions[1]}}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-action-row>
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group"
+                        [(ngModel)]="userAnswers[1]">
+                        <div>
+                            <mat-radio-button class="example-radio-button" *ngFor="let answer of answers[1]"
+                                [value]="answer">
+                                {{answer}}
+                            </mat-radio-button>
+                        </div>
+                    </mat-radio-group>
+                    <button mat-button class="btn move" (click)="prevStep()">Previous</button>
+                    <button mat-button class="btn move" (click)="nextStep()">Next</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{questions[2]}}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-action-row>
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group"
+                        [(ngModel)]="userAnswers[2]">
+                        <div>
+                            <mat-radio-button class="example-radio-button" *ngFor="let answer of answers[2]"
+                                [value]="answer">
+                                {{answer}}
+                            </mat-radio-button>
+                        </div>
+                    </mat-radio-group>
+                    <button mat-button class="btn move" (click)="prevStep()">Previous</button>
+                    <button mat-button class="btn move" (click)="done()">Done</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+
+        </mat-accordion>
+    </div>
+
+
+    <div *ngIf="isUploaded" class="content">
+        <div class="intro">Great! You finished reading, now it's time to take a test. Don't worry, nothing bad is gonna
+            happen if you fail! To check how much you understood from the text, you have to answer a few questions.
+            At the end of the test, you won't get a result. You should check yourself and think about how much you
+            understood from the text you read.
+            You can try an easier way of reading or something harder, depending on how confident you are about your
+            results.
+        </div>
+        <mat-accordion class="items-headers-align">
+            <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        What is the main action?
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-action-row>
+                    <input matInput class="form-control" placeholder="Your answer" />
+                    <button mat-button class="btn move" (click)="nextStep()">Next</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        What can you say about the narrator?
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-action-row>
+                    <input matInput class="form-control" placeholder="Your answer" />
+                    <button mat-button class="btn move" (click)="prevStep()">Previous</button>
+                    <button mat-button class="btn move" (click)="nextStep()">Next</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        What is your opinion on the text?
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <mat-action-row>
+                    <input matInput class="form-control" placeholder="Your answer" />
+                    <button mat-button class="btn move" (click)="prevStep()">Previous</button>
+                    <button mat-button class="btn move" (click)="done()">Done</button>
+                </mat-action-row>
+            </mat-expansion-panel>
+
+        </mat-accordion>
+    </div>
+</body>

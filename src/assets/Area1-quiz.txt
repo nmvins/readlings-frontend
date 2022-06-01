@@ -1,0 +1,12 @@
+Who is the character seen out of the hotel window?
+Miss Matheson,Miss Marvell -c,Miss Murph
+What does the woman bring with her when she visits Poirot at the hotel?
+Gold coins,Greetings from home,Threatening letter -c
+What is the rank and title of Poirot's friend?
+Sergeant,Captain -c,General,Major.
+What time did they arrive at Yardly Chase?
+half-past ten,half-past five -c,around two
+To whom does he want to send a telegram?
+Lord Yardly -c,Hastings,Miss Marvell
+Who had the diamond?
+Miss Marvell,Lady Yardly,Mr. Rolf -c

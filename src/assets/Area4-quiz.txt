@@ -1,0 +1,12 @@
+Where was the man killed?
+London,Derbyshire -c,Ealing
+What is the name of the Scotland Yard inspector?
+Japp -c", "Mr. Middleton", "Roger"]
+What did Mrs Havering wear?
+A dress", "A flame-coloured jumper -c", "A coat"]
+What university did Roger Havering attend?Hint
+Manchester,Oxford -c,Liverpool
+Where do police find the missing murder weapon?
+London,Ealing -c,Bath
+What was Roger Havering's job in this?
+To get rid of the revolver -c,Nothing,To clean up
