@@ -1,4 +1,5 @@
 export const environment = {
-  apiUrl: "https://backend-license.herokuapp.com",
+  apiUrl: "https://server-license.herokuapp.com",
   production: true
 };
+ 
