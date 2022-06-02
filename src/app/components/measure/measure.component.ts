@@ -62,7 +62,7 @@ export class MeasureComponent implements OnInit {
     this.interval = setInterval(() => {
       this.flick = !this.flick;
       this.intervalIndex++;
-      if (this.intervalIndex == 60) {
+      if (this.intervalIndex == 20) {
         this.timePeriodIndex++;
         this.currentPeriod = this.timePeriods[this.timePeriodIndex];
         this.intervalIndex = 0;
