@@ -80,6 +80,7 @@ export class MeasureComponent implements OnInit {
   }
 
   async stop() {
+    document.getElementById('stop')?.setAttribute('disabled', '');
     this.isAttentionMeasured = true;
     clearInterval(this.interval);
     let res = await this.measureService.addAttentionMeasurement(this.attentionLevels[this.timePeriodIndex]);
