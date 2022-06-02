@@ -48,8 +48,8 @@ export class LoginComponent implements OnInit {
       try {
         this.loading = true;
         const result = await this.authService.login(this.emailToLogin, this.passwordToLogin).toPromise();
-        // const time = new Date();
-        // await this.measureService.addLoginDate(time.toString());
+        const time = new Date();
+        await this.measureService.addLoginDate(time.toString());
         this.router.navigate(['home']);
       }
       catch (e) {
