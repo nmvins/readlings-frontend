@@ -48,6 +48,7 @@ import { MeasureDialogContentComponent } from './components/measure-dialog-conte
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ReadingDialogContentComponent } from './components/reading-dialog-content/reading-dialog-content.component';
 import { SidenavDialogContentComponent } from './components/sidenav-dialog-content/sidenav-dialog-content.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -101,6 +102,7 @@ import { SidenavDialogContentComponent } from './components/sidenav-dialog-conte
   
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrInterceptor, multi: true },
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
