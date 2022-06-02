@@ -66,6 +66,7 @@ export class MeasureComponent implements OnInit {
         this.currentPeriod = this.timePeriods[this.timePeriodIndex];
         this.intervalIndex = 0;
         if (this.timePeriodIndex == 8) {
+          this.timePeriodIndex = 7;
           this.stop();
         } else this.squareInterval();
       }
