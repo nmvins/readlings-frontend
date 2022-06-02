@@ -21,7 +21,7 @@ export class MeasureComponent implements OnInit {
 
   flick: boolean;
   intervalIndex: number;
-  timePeriods = [2000, 1000, 500, 250, 100, 75, 50, 10];
+  timePeriods = [2000, 1000, 500, 250, 100, 50, 10, 5];
   attentionLevels = ["Very low", "Low", "Medium low", "Medium", "Medium", "Medium high", "High", "Very high"]
   currentPeriod: number;
   timePeriodIndex: number;
@@ -50,32 +50,32 @@ export class MeasureComponent implements OnInit {
     this.seconds = 0;
     this.intervalIndex = 0;
     this.timePeriodIndex = 0;
-     let result = await this.measureService.getTextFromFile();
+    let result = await this.measureService.getTextFromFile();
     let texts = result.split("//////////////////////////");
     this.textIndex = Math.floor(Math.random() * (5 - 0) + 0);
     this.fileContent = texts[this.textIndex];
   }
 
-  async start() {
-    document.getElementById('start')?.setAttribute('disabled', '');   
-    await this.setDeceleratingTimeout( () => { this.flick = !this.flick; }, this.timePeriods, 80);
+  squareInterval() {
+    this.interval = setInterval(() => {
+      this.flick = !this.flick;
+      this.intervalIndex++;
+      if (this.intervalIndex == 15) {
+        clearInterval(this.interval);
+        this.timePeriodIndex++;
+        this.currentPeriod = this.timePeriods[this.timePeriodIndex];
+        this.intervalIndex = 0;
+        if (this.timePeriodIndex == 8) {
+          this.stop();
+        } else this.squareInterval();
+      }
+    }, this.currentPeriod);
   }
 
-  setDeceleratingTimeout(callback: any, factor: any, times: any) {
-    var internalCallback = function (tick, counter) {
-      return function () {
-        if (--tick >= 0) {
-          if(tick % 10 == 0) {
-            counter++;
-          }
-          console.log(factor[counter])
-          window.setTimeout(internalCallback, factor[counter]);
-          callback();
-        }
-      }
-    }(times, 0);
-
-    window.setTimeout(internalCallback, factor);
+  async start() {
+    document.getElementById('start')?.setAttribute('disabled', '');
+    this.currentPeriod = this.timePeriods[this.timePeriodIndex];
+    this.squareInterval();
   }
 
   async stop() {
