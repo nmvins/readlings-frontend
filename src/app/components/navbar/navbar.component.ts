@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -16,7 +17,8 @@ export class NavbarComponent implements OnInit {
    links = ['/home', '/reading-settings'];
   activeLink = this.links[0];
 
-  constructor(private authService: AuthenticationService, private measureService: MeasureService,
+  constructor(private datePipe: DatePipe, 
+    private authService: AuthenticationService, private measureService: MeasureService,
      router: Router) {
     router.events.subscribe(event => {
       if (router.url === '') {
@@ -32,6 +34,10 @@ export class NavbarComponent implements OnInit {
     const time = new Date();
     await this.measureService.addLoginDate(time.toString());
     this.authService.logout();
+  }
+
+  transformDate(date: Date) {
+    return this.datePipe.transform(date, 'MMM d, y, h:mm:ss a');
   }
 
 }

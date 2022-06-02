@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MeasureService } from 'src/app/services/measure.service';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
   invalidCredentials = false;
   loading = false;
 
-  constructor(protected authService: AuthenticationService, protected measureService: MeasureService,
+  constructor(private datePipe: DatePipe, protected authService: AuthenticationService, protected measureService: MeasureService,
      protected router: Router, private _snackBar: MatSnackBar) { }
 
   openSnackBar(message: string) {
@@ -92,6 +93,10 @@ export class LoginComponent implements OnInit {
         (<HTMLElement>document.querySelectorAll('.mat-tab-label')[i]).click();
       }
     }
+  }
+
+  transformDate(date: Date) {
+    return this.datePipe.transform(date, 'MMM d, y, h:mm:ss a');
   }
 }
 
