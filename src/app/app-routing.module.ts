@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: 'app-game-read', component: GameReadComponent, canActivate: [AuthGuard]},
   { path: 'challenges', component: ChallengesComponent, canActivate: [AuthGuard]},
   { path: 'play-challenge', component: PlayChallengeComponent, canActivate: [AuthGuard]},
-  { path: 'measure', component: MeasureComponent, canActivate: [AuthGuard]},
+  { path: 'measure', component: MeasureComponent},
 ];
 
 @NgModule({
