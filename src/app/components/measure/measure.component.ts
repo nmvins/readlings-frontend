@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { MeasureService } from 'src/app/services/measure.service';
 import { MeasureDialogContentComponent } from '../measure-dialog-content/measure-dialog-content.component';
 
@@ -31,6 +32,13 @@ export class MeasureComponent implements OnInit {
   constructor(protected router: Router, public dialog: MatDialog, private measureService: MeasureService) { }
 
   async ngOnInit(): Promise<void> {
+    this.router.events
+    // For newer versions or rxjs use a pipe on the filter:
+    // .pipe(filter(event => event instanceof NavigationEnd))
+    .pipe(filter(event => event instanceof NavigationEnd))
+    .subscribe(() => {
+      document.querySelector('.mat-sidenav-content')!.scrollTop = 0;
+    });
     this.isAttentionMeasured = false;
     let res = await this.measureService.getAge();
     if (!(parseInt(res) > 0)) {

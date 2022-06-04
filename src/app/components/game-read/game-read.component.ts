@@ -1,6 +1,8 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { ChangeDetectorRef, Component, HostListener, Inject, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Params, Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { Challenge } from 'src/app/models/Challenge';
 import { ChallengeService } from 'src/app/services/challenge.service';
 import { LevelsService } from 'src/app/services/levels.service';
@@ -16,6 +18,8 @@ export class GameReadComponent implements OnInit {
   constructor(protected router: Router, private levelsService: LevelsService, private activatedRoute: ActivatedRoute,
     public dialog: MatDialog,
     private challengeService: ChallengeService,
+    private changeDetect: ChangeDetectorRef,
+    private scroll: ViewportScroller
   ) { }
 
   challengesToUnlock: Challenge[] = [
@@ -68,8 +72,41 @@ export class GameReadComponent implements OnInit {
   score: number;
   userScore: number;
 
+  pageYoffset: any;
+
+  @HostListener('window:scroll', ['$event']) onScroll(event: any){
+    this.pageYoffset = window.pageYOffset;
+ }
+
+ scrollToTop(){
+  this.scroll.scrollToPosition([0,0]);
+}
+
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(async (params: any) => {
+      //this.scrollToElement(document.getElementById('target')!);
+      //console.log(document.getElementById('target'));
+
+      // this.router.events.subscribe((evt) => {
+      //   if (!(evt instanceof NavigationEnd)) {
+      //     return;
+      //   }
+      //   // Change height:100% into auto
+      //   document.querySelector('body')!.setAttribute('height', 'auto');
+      //   // Successfully scroll back to top
+      //   document.querySelector('body')!.scrollTop(0);
+      //   // Remove javascript added styles
+      //   document.querySelector('body')!.setAttribute('height', '');
+      //   this.changeDetect.detectChanges();
+      // });
+
+      this.router.events
+      // For newer versions or rxjs use a pipe on the filter:
+      // .pipe(filter(event => event instanceof NavigationEnd))
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        document.querySelector('.mat-sidenav-content')!.scrollTop = 0;
+      });
       this.activeLevel = parseInt(params.level);
 
       await this.levelsService.setLevel(this.activeLevel);
@@ -85,7 +122,7 @@ export class GameReadComponent implements OnInit {
         case 1: {
           this.methodSettingText = '0';
           this.method = '2';
-          this.speed = (20 * this.activeLevel).toString();
+          this.speed = (25 * this.activeLevel).toString();
           this.challengesToUnlock[0].title = "Coca-Cola’s ‘health by stealth’ wheeze is sneaky. But if it works so be it";
           break;
         }
@@ -289,8 +326,11 @@ export class GameReadComponent implements OnInit {
 
   }
 
+  scrollToElement(el: HTMLElement): void {
+    el.scrollIntoView({behavior: "smooth"});
+  }
+
   read() {
-    console.log(this.fileContent);
     if (this.method == '0') {
       this.oneByOne();
     } else if (this.method != '0' && this.method != '7') {
