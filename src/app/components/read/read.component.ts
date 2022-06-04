@@ -65,6 +65,8 @@ export class ReadComponent implements OnInit {
   //word by word 
   oneByOne() {
     this.splitText();
+    this.finalWords = [];
+    this.index = 0;
 
     this.interval = setInterval(() => {
       this.word = this.entities![this.index];
@@ -77,6 +79,8 @@ export class ReadComponent implements OnInit {
   //highlight - color - square - underline - bold - italic
   highlight() {
     this.splitText();
+    this.finalWords = [];
+    this.index = 0;
 
     this.entities.forEach(word => {
       this.finalWords.push({
@@ -102,6 +106,8 @@ export class ReadComponent implements OnInit {
   //slide
   slide() {
     this.splitText();
+    this.finalWords = [];
+    this.index = 0;
 
     this.interval = setInterval(() => {
       this.slidingTrue = !this.slidingTrue;

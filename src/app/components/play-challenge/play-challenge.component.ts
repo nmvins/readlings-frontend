@@ -295,6 +295,7 @@ export class PlayChallengeComponent implements OnInit {
     this.splitText();
     this.finalWords = [];
     this.index = 0;
+    
     this.entities.forEach(word => {
       this.finalWords.push({
         text: word,

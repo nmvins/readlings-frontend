@@ -290,6 +290,7 @@ export class GameReadComponent implements OnInit {
   }
 
   read() {
+    console.log(this.fileContent);
     if (this.method == '0') {
       this.oneByOne();
     } else if (this.method != '0' && this.method != '7') {
@@ -302,6 +303,8 @@ export class GameReadComponent implements OnInit {
   //word by word 
   oneByOne() {
     this.splitText();
+    this.finalWords = [];
+    this.index = 0;
 
     this.interval = setInterval(() => {
       this.word = this.entities![this.index];
@@ -313,6 +316,9 @@ export class GameReadComponent implements OnInit {
   //highlight - color - square - underline - bold - italic
   highlight() {
     this.splitText();
+    this.finalWords = [];
+    this.index = 0;
+
     this.entities.forEach(word => {
       this.finalWords.push({
         text: word,
@@ -337,6 +343,8 @@ export class GameReadComponent implements OnInit {
   //slide
   slide() {
     this.splitText();
+    this.finalWords = [];
+    this.index = 0;
 
     this.interval = setInterval(() => {
       this.slidingTrue = !this.slidingTrue;
