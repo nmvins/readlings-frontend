@@ -4,9 +4,20 @@
         font-size: 20px;
     }
 
-    .first {
+    .mat-radio-button {
+        font-family: 'Berlin Sans FB';
+    }
+
+    .age{
         width: 400px;
         height: 400px;
+        text-align: center;
+    }
+
+    .first {
+        width: 1000px;
+        height: 400px;
+        text-align: center;
     }
 
     .second {
@@ -17,7 +28,7 @@
 
     .mat-radio-group {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1px;
         margin: auto;
         margin-top: 30px;
         margin-bottom: 30px;
@@ -36,7 +47,6 @@
         border-color: white;
 
         margin-top: 60px;
-        margin-left: 150px;
     }
 
     .btn-second {

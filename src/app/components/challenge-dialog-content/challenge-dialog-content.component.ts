@@ -33,7 +33,8 @@ export class ChallengeDialogContentComponent implements OnInit {
       givenQuestion: string,
       listOfAnswers: string[],
       givenCorrectAnswer: string,
-      notEnoughPoints: boolean
+      notEnoughPoints: boolean,
+      isDisabled: boolean
     }
   ) {
     this.isDone = data.isDone;
@@ -42,7 +43,7 @@ export class ChallengeDialogContentComponent implements OnInit {
     this.question = data.givenQuestion;
     this.correctAnswer = data.givenCorrectAnswer;
     this.notEnoughPoints = data.notEnoughPoints;
-    dialog.disableClose = true;
+    dialog.disableClose = data.isDisabled;
   }
 
   ngOnInit(): void {

@@ -363,7 +363,8 @@ export class PlayChallengeComponent implements OnInit {
         shouldStartChallenge: false,
         givenQuestion: this.givenQuestion,
         listOfAnswers: this.listOfAnswers,
-        givenCorrectAnswer: this.givenCorrectAnswer
+        givenCorrectAnswer: this.givenCorrectAnswer,
+        isDisabled: true
       }
     });
 

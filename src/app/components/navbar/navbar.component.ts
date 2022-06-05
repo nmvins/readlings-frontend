@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
     private authService: AuthenticationService, private measureService: MeasureService,
      router: Router) {
     router.events.subscribe(event => {
-      if (router.url === '') {
+      if (router.url === '/') {
         this.showSideNav = false;
       } else this.showSideNav = true;
     });

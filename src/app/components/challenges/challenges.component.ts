@@ -51,7 +51,8 @@ export class ChallengesComponent implements OnInit {
     if (this.lockedChallenges.includes(this.chosenChallenge) == false) {
       const dialogRef = this.dialog.open(ChallengeDialogContentComponent, {
         data: {
-          shouldStartChallenge: true
+          shouldStartChallenge: true,
+          isDisabled: true
         }
       });
 
@@ -81,7 +82,8 @@ export class ChallengesComponent implements OnInit {
         data: {
           isDone: false,
           shouldStartChallenge: false,
-          notEnoughPoints: true
+          notEnoughPoints: true,
+          isDisabled: false
         }
       });
     }
