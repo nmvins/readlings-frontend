@@ -32,6 +32,8 @@ export class MeasureComponent implements OnInit {
   constructor(protected router: Router, public dialog: MatDialog, private measureService: MeasureService) { }
 
   async ngOnInit(): Promise<void> {
+    document.getElementById('stop')?.setAttribute('disabled', '');
+    document.getElementById('done')?.setAttribute('disabled', '');
     this.router.events
     // For newer versions or rxjs use a pipe on the filter:
     // .pipe(filter(event => event instanceof NavigationEnd))
@@ -83,6 +85,7 @@ export class MeasureComponent implements OnInit {
 
   async start() {
     document.getElementById('start')?.setAttribute('disabled', '');
+    document.getElementById('stop')?.removeAttribute('disabled');
     this.currentPeriod = this.timePeriods[this.timePeriodIndex];
     this.squareInterval();
   }
@@ -115,6 +118,7 @@ export class MeasureComponent implements OnInit {
 
   read() {
     document.getElementById('read')?.setAttribute('disabled', '');
+    document.getElementById('done')?.removeAttribute('disabled');
     this.text = this.fileContent;
     this.interval = setInterval(() => {
       this.seconds++;
@@ -122,10 +126,10 @@ export class MeasureComponent implements OnInit {
   }
 
   async done() {
+    document.getElementById('done')?.setAttribute('disabled', '');
     //TODO: add speed only if correct answer
     clearInterval(this.interval);
     this.numberOfWords = this.fileContent.split(/\s+/).length;
-    let res = await this.measureService.addSpeedMeasurement(this.calculateSpeed(this.numberOfWords).toString());
     const dialogRef = this.dialog.open(MeasureDialogContentComponent, {
       data: {
         speed: this.calculateSpeed(this.numberOfWords),
@@ -136,8 +140,9 @@ export class MeasureComponent implements OnInit {
       }
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(async result => {
       if (result) {
+        let res = await this.measureService.addSpeedMeasurement(this.calculateSpeed(this.numberOfWords).toString());
         this.router.navigate(['reading-settings']);
       } else {
         location.reload();
