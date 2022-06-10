@@ -1,6 +1,6 @@
+What was Catherine's father's name?
+Richard -c,Rick,Ryan
 How old is Catherine?
 15,17 -c,21
-What does Catherine find inside the mysterious cabinet in her room in Northanger Abbey?
-Laundry bills -c,The late Mrs. Tilney's secret diary,A sermon written by Henry
-Who does Eleanor marry at the end of the novel?
-John Thorpe,James Morland,A viscount -c
+What did the gentlemen say about Catherine?
+She was weird,She was pretty -c,Nothing

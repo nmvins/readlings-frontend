@@ -1,6 +1,6 @@
-What is the first name of Archdeacon Grantly?
-Theophilus -c,Theodore,Theobald
-Of which novel in the Chronicles did Trollope say in his autobiography "I regard this as the best novel I have written."
-Barchester Towers,The Last Chronicle of Barset -c,Doctor Thorne
-Who does Griselda Grantly marry in Framley Parsonage, despite Lady Lufton's best efforts?
-Lord Dumbello,Lord Lufton -c,The Duke of Omnium
+What was Mr George Walker's daughter's name?
+Mary Walker -c,Jane Walker,Anna Walker
+When did Mrs. Crawley pay the money to Fletcher?
+She didn't pay,Last year,In October -c
+What was Major Grantly's late wife's fortune?
+Six thousand pounds -c,One hundred pounds,A thousand pounds

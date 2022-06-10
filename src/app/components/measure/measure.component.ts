@@ -122,6 +122,7 @@ export class MeasureComponent implements OnInit {
   }
 
   async done() {
+    //TODO: add speed only if correct answer
     clearInterval(this.interval);
     this.numberOfWords = this.fileContent.split(/\s+/).length;
     let res = await this.measureService.addSpeedMeasurement(this.calculateSpeed(this.numberOfWords).toString());
