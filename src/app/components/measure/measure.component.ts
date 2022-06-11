@@ -152,7 +152,7 @@ export class MeasureComponent implements OnInit {
 
   calculateSpeed(numberOfWords: number) {
     //returns number of words/min
-    return numberOfWords * 60 / this.seconds;
+    return Math.floor(numberOfWords * 60 / this.seconds)
   }
 
   ngOnDestroy() {
