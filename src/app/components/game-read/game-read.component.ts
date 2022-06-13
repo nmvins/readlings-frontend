@@ -132,7 +132,7 @@ export class GameReadComponent implements OnInit {
           if (this.activeLevel < 4) this.method = '1';
           else this.method = '7';
           if (this.activeLevel / 2 < 2) this.speed = (this.activeLevel * 40).toString();
-          else this.speed = (40 * (this.activeLevel - 3)).toString();
+          else this.speed = (20 * (this.activeLevel - 3)).toString();
           this.challengesToUnlock[0].title = 'How trees can teach us about our own lives';
           break;
         }
