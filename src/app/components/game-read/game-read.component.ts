@@ -39,7 +39,7 @@ export class GameReadComponent implements OnInit {
       isFinished: false,
       isUnlocked: false
     }
-  ]; 
+  ];
 
   fileContent: string;
   speed: string;
@@ -64,7 +64,7 @@ export class GameReadComponent implements OnInit {
   slidingFalse = true;
 
   givenQuestion: string;
-  listOfAnswers: string[] =[];
+  listOfAnswers: string[] = [];
   givenCorrectAnswer: string;
 
   area: number;
@@ -74,13 +74,13 @@ export class GameReadComponent implements OnInit {
 
   pageYoffset: any;
 
-  @HostListener('window:scroll', ['$event']) onScroll(event: any){
+  @HostListener('window:scroll', ['$event']) onScroll(event: any) {
     this.pageYoffset = window.pageYOffset;
- }
+  }
 
- scrollToTop(){
-  this.scroll.scrollToPosition([0,0]);
-}
+  scrollToTop() {
+    this.scroll.scrollToPosition([0, 0]);
+  }
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(async (params: any) => {
@@ -101,12 +101,12 @@ export class GameReadComponent implements OnInit {
       // });
 
       this.router.events
-      // For newer versions or rxjs use a pipe on the filter:
-      // .pipe(filter(event => event instanceof NavigationEnd))
-      .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => {
-        document.querySelector('.mat-sidenav-content')!.scrollTop = 0;
-      });
+        // For newer versions or rxjs use a pipe on the filter:
+        // .pipe(filter(event => event instanceof NavigationEnd))
+        .pipe(filter(event => event instanceof NavigationEnd))
+        .subscribe(() => {
+          document.querySelector('.mat-sidenav-content')!.scrollTop = 0;
+        });
       this.activeLevel = parseInt(params.level);
 
       await this.levelsService.setLevel(this.activeLevel);
@@ -117,7 +117,7 @@ export class GameReadComponent implements OnInit {
       this.score = this.area * this.activeLevel * 50;
       res = await this.levelsService.getScore();
       this.userScore = parseInt(res);
-      
+
       switch (this.area) {
         case 1: {
           this.methodSettingText = '0';
@@ -312,10 +312,10 @@ export class GameReadComponent implements OnInit {
 
       this.fileContent = await this.levelsService.getTextFromFile(this.area.toString(), this.activeLevel.toString());
       let contentOfQuiz = await (await this.levelsService.getQuestionsFromFile(this.area.toString())).split('\n');
-      this.givenQuestion = contentOfQuiz[(this.activeLevel-1)*2];
-      this.listOfAnswers = contentOfQuiz[this.activeLevel*2-1].split(',');
+      this.givenQuestion = contentOfQuiz[(this.activeLevel - 1) * 2];
+      this.listOfAnswers = contentOfQuiz[this.activeLevel * 2 - 1].split(',');
       this.listOfAnswers.forEach(answer => {
-        if(answer.includes(' -c')) {
+        if (answer.includes(' -c')) {
           this.listOfAnswers[this.listOfAnswers.indexOf(answer)] = answer.replace(' -c', '');
           this.givenCorrectAnswer = answer.replace(' -c', '');
         }
@@ -327,7 +327,7 @@ export class GameReadComponent implements OnInit {
   }
 
   scrollToElement(el: HTMLElement): void {
-    el.scrollIntoView({behavior: "smooth"});
+    el.scrollIntoView({ behavior: "smooth" });
   }
 
   read() {
@@ -368,7 +368,7 @@ export class GameReadComponent implements OnInit {
 
     this.interval = setInterval(() => {
       this.clearAll();
-      if(this.finalWords[this.index] != null) {this.finalWords[this.index].highlight = true;}
+      if (this.finalWords[this.index] != null) { this.finalWords[this.index].highlight = true; }
       this.index++;
       if (this.index > this.entities!.length) { clearInterval(this.interval); this.onFinish() };
     }, this.calculateSpeed() * 1000);
@@ -420,13 +420,13 @@ export class GameReadComponent implements OnInit {
   }
 
   async onFinish() {
-   await this.levelsService.setLevel(this.activeLevel);
+    await this.levelsService.setLevel(this.activeLevel);
 
     if (this.activeLevel >= 6) {
       this.challengesToUnlock.forEach(async element => {
-        let res = await  this.challengeService.getAllChallenges();
-       res.forEach(challenge => {
-          if(challenge.title == element.title) {
+        let res = await this.challengeService.getAllChallenges();
+        res.forEach(challenge => {
+          if (challenge.title == element.title) {
             this.challengeService.unlock(challenge);
           }
         })
@@ -450,8 +450,11 @@ export class GameReadComponent implements OnInit {
         await this.levelsService.setScore(this.score);
         if (this.activeLevel >= 6) {
           await this.levelsService.setArea(this.area + 1);
-        } else {await this.levelsService.setArea(this.area);}
-        await this.levelsService.setLevel(this.activeLevel + 1);
+          await this.levelsService.setLevel(1);
+        } else {
+          await this.levelsService.setArea(this.area);
+          await this.levelsService.setLevel(this.activeLevel + 1);
+        }
       }
       else {
         await this.levelsService.setScore(this.score);
