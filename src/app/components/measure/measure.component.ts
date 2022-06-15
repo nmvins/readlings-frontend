@@ -22,7 +22,7 @@ export class MeasureComponent implements OnInit {
 
   flick: boolean;
   intervalIndex: number;
-  timePeriods = [2000, 1000, 500, 250, 100, 50, 10, 5];
+  timePeriods = [500, 400, 250, 180, 100, 50, 10, 5];
   attentionLevels = ["Very low", "Low", "Medium low", "Medium", "Medium", "Medium high", "High", "Very high"]
   currentPeriod: number;
   timePeriodIndex: number;
