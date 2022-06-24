@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,13 @@ import { FormControl } from '@angular/forms';
 export class AppComponent {
   mode = new FormControl('over');
   shouldRun = true;
+
+  constructor(
+    private authService: AuthenticationService) {}
+
+  @HostListener('window:beforeunload')
+  unloadHandler(event: any) {
+    this.authService.logout();
+  }
 
 }
